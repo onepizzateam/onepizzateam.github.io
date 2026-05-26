@@ -15,7 +15,7 @@
 
         body {
             font-family: 'Courier New', monospace;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a0a2e 25%, #16213e 50%, #0f3460 75%, #1a0a2e 100%);
+            background: linear-gradient(180deg, #1a0f3d 0%, #2d1b4e 30%, #0d1f3c 60%, #1a0f3d 100%);
             background-attachment: fixed;
             color: #e0d5ff;
             line-height: 1.6;
@@ -32,8 +32,8 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, 0.05) 25%, rgba(255, 0, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, 0.05) 75%, rgba(255, 0, 127, 0.05) 76%, transparent 77%, transparent),
-                linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, 0.05) 25%, rgba(255, 0, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, 0.05) 75%, rgba(255, 0, 127, 0.05) 76%, transparent 77%, transparent);
+                linear-gradient(0deg, transparent 24%, rgba(138, 43, 226, 0.08) 25%, rgba(138, 43, 226, 0.08) 26%, transparent 27%, transparent 74%, rgba(138, 43, 226, 0.08) 75%, rgba(138, 43, 226, 0.08) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(138, 43, 226, 0.08) 25%, rgba(138, 43, 226, 0.08) 26%, transparent 27%, transparent 74%, rgba(138, 43, 226, 0.08) 75%, rgba(138, 43, 226, 0.08) 76%, transparent 77%, transparent);
             background-size: 50px 50px;
             pointer-events: none;
             z-index: 0;
@@ -43,120 +43,6 @@
         @keyframes grid-drift {
             0% { transform: translateY(0); }
             100% { transform: translateY(50px); }
-        }
-
-        /* Loading animation - Radio wave effect */
-        .loading-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 14, 39, 0.95);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            opacity: 1;
-            transition: opacity 1s ease-out 2s;
-            pointer-events: none;
-        }
-
-        .loading-container.loaded {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .loading-content {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .loading-image {
-            width: 300px;
-            height: 300px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:%23ff00ff;stop-opacity:1" /><stop offset="50%" style="stop-color:%2300ffff;stop-opacity:1" /><stop offset="100%" style="stop-color:%23ff0099;stop-opacity:1" /></linearGradient></defs><rect width="400" height="300" fill="%230a0e27"/><circle cx="200" cy="80" r="70" fill="%23ff00ff" opacity="0.8"/><rect x="0" y="150" width="400" height="150" fill="%2300ffff" opacity="0.6"/><polygon points="50,250 150,100 100,250" fill="%23ff0099" opacity="0.7"/></svg>') center/cover;
-            margin: 0 auto 40px;
-            position: relative;
-        }
-
-        .loading-waves {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .wave {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border: 2px solid;
-            border-radius: 50%;
-            top: 0;
-            left: 0;
-            animation: radio-wave 2s ease-out infinite;
-        }
-
-        .wave:nth-child(1) {
-            border-color: #ff00ff;
-            animation-delay: 0s;
-        }
-
-        .wave:nth-child(2) {
-            border-color: #00ffff;
-            width: 250px;
-            height: 250px;
-            top: 25px;
-            left: 25px;
-            animation-delay: 0.4s;
-        }
-
-        .wave:nth-child(3) {
-            border-color: #ff0099;
-            width: 200px;
-            height: 200px;
-            top: 50px;
-            left: 50px;
-            animation-delay: 0.8s;
-        }
-
-        @keyframes radio-wave {
-            0% {
-                width: 300px;
-                height: 300px;
-                top: 0;
-                left: 0;
-                opacity: 1;
-            }
-            100% {
-                width: 600px;
-                height: 600px;
-                top: -150px;
-                left: -150px;
-                opacity: 0;
-            }
-        }
-
-        .loading-text {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            color: #ff00ff;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            animation: flicker 0.15s infinite;
-        }
-
-        @keyframes flicker {
-            0%, 18%, 22%, 25%, 53%, 57%, 100% {
-                opacity: 1;
-            }
-            20%, 24%, 55% {
-                opacity: 0.5;
-            }
         }
 
         /* Main content wrapper */
@@ -175,53 +61,34 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(180deg, transparent 0%, rgba(255, 0, 255, 0.1) 50%, transparent 100%);
-        }
-
-        .hero-glitch {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 30px;
+            background: linear-gradient(180deg, rgba(255, 0, 153, 0.15) 0%, rgba(138, 43, 226, 0.1) 50%, transparent 100%);
         }
 
         h1 {
             font-family: 'Orbitron', sans-serif;
             font-size: 5rem;
             font-weight: 900;
-            background: linear-gradient(90deg, #ff00ff, #00ffff, #ff0099, #ff00ff);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ff0099;
             margin-bottom: 20px;
             letter-spacing: 4px;
             text-transform: uppercase;
-            animation: gradient-shift 8s ease infinite;
-        }
-
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         .tagline {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.3rem;
-            color: #00ffff;
+            color: #8a2be2;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         .hero-description {
             font-size: 1.05rem;
-            color: #e0d5ff;
+            color: #c9b5ff;
             max-width: 650px;
             line-height: 1.8;
             margin: 0 auto 50px;
-            text-shadow: 0 0 5px rgba(255, 0, 255, 0.3);
         }
 
         .contact-badges {
@@ -237,23 +104,21 @@
             align-items: center;
             gap: 8px;
             padding: 12px 20px;
-            background: linear-gradient(90deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 255, 0.2));
-            border: 2px solid #ff00ff;
+            background: rgba(138, 43, 226, 0.15);
+            border: 2px solid #8a2be2;
             font-size: 0.9rem;
-            color: #00ffff;
+            color: #c9b5ff;
             text-decoration: none;
             transition: all 0.3s ease;
             font-family: 'Courier New', monospace;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: inset 0 0 10px rgba(255, 0, 255, 0.3);
         }
 
         .badge:hover {
-            border-color: #00ffff;
-            background: linear-gradient(90deg, rgba(0, 255, 255, 0.3), rgba(255, 0, 255, 0.3));
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), inset 0 0 10px rgba(0, 255, 255, 0.3);
-            color: #ff00ff;
+            border-color: #ff0099;
+            background: rgba(255, 0, 153, 0.15);
+            color: #ff0099;
         }
 
         /* ===== MAIN CONTENT ===== */
@@ -266,24 +131,19 @@
         section {
             margin-bottom: 120px;
             position: relative;
-            background: linear-gradient(135deg, rgba(255, 0, 255, 0.03) 0%, rgba(0, 255, 255, 0.03) 100%);
+            background: rgba(138, 43, 226, 0.05);
             padding: 60px;
-            border: 2px solid;
-            border-image: linear-gradient(135deg, #ff00ff 0%, #00ffff 50%, #ff0099 100%) 1;
+            border: 2px solid #8a2be2;
         }
 
         h2 {
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
-            background: linear-gradient(90deg, #ff00ff, #00ffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ff0099;
             margin-bottom: 50px;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
         }
 
         /* ===== IMPACT SECTION ===== */
@@ -296,49 +156,31 @@
 
         .impact-card {
             padding: 40px;
-            background: linear-gradient(135deg, rgba(255, 0, 255, 0.1) 0%, rgba(0, 255, 255, 0.05) 100%);
-            border: 2px solid #ff00ff;
+            background: rgba(255, 0, 153, 0.1);
+            border: 2px solid #ff0099;
             position: relative;
             overflow: hidden;
-        }
-
-        .impact-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #00ffff, transparent);
-            animation: scan-line 3s linear infinite;
-        }
-
-        @keyframes scan-line {
-            0% { left: -100%; }
-            100% { left: 100%; }
         }
 
         .impact-number {
             font-family: 'Orbitron', sans-serif;
             font-size: 2.8rem;
             font-weight: 900;
-            color: #ff00ff;
+            color: #ff0099;
             margin-bottom: 15px;
-            text-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
         }
 
         .impact-label {
             font-size: 0.95rem;
-            color: #00ffff;
+            color: #c9b5ff;
             line-height: 1.6;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
         }
 
         /* ===== WORK SECTION ===== */
         .work-item {
             margin-bottom: 60px;
             padding-bottom: 50px;
-            border-bottom: 2px dashed rgba(255, 0, 255, 0.3);
+            border-bottom: 2px dashed rgba(138, 43, 226, 0.3);
         }
 
         .work-item:last-child {
@@ -356,17 +198,16 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 1.6rem;
             font-weight: 700;
-            color: #00ffff;
+            color: #8a2be2;
             margin-bottom: 5px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         .work-role {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.1rem;
-            color: #ff00ff;
+            color: #ff0099;
             font-weight: 700;
             margin-bottom: 8px;
             text-transform: uppercase;
@@ -375,26 +216,24 @@
 
         .work-date {
             font-size: 0.85rem;
-            color: #ff0099;
+            color: #ff6ec7;
             font-style: italic;
         }
 
         .work-duration {
             text-align: right;
             font-size: 0.8rem;
-            color: #00ffff;
+            color: #8a2be2;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
         }
 
         .work-description {
             font-size: 1.05rem;
-            color: #e0d5ff;
+            color: #c9b5ff;
             line-height: 1.8;
             margin-bottom: 25px;
-            text-shadow: 0 0 5px rgba(255, 0, 255, 0.2);
         }
 
         .work-highlights {
@@ -405,38 +244,21 @@
 
         .highlight {
             padding: 20px;
-            background: rgba(0, 255, 255, 0.05);
-            border-left: 4px solid #00ffff;
-            border-bottom: 2px solid #ff00ff;
+            background: rgba(255, 0, 153, 0.08);
+            border-left: 4px solid #ff0099;
+            border-bottom: 2px solid #8a2be2;
             font-size: 0.95rem;
-            color: #e0d5ff;
+            color: #c9b5ff;
             line-height: 1.7;
         }
 
         /* ===== PROJECTS SECTION ===== */
         .project-showcase {
             padding: 50px;
-            background: linear-gradient(135deg, rgba(255, 0, 255, 0.15) 0%, rgba(0, 255, 255, 0.1) 100%);
-            border: 3px solid #ff00ff;
+            background: rgba(138, 43, 226, 0.08);
+            border: 3px solid #ff0099;
             position: relative;
             overflow: hidden;
-        }
-
-        .project-showcase::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255, 0, 255, 0.3), transparent);
-            border-radius: 50%;
-            animation: pulse-glow 4s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 1; }
         }
 
         .project-content {
@@ -448,16 +270,15 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 1.6rem;
             font-weight: 700;
-            color: #00ffff;
+            color: #8a2be2;
             margin-bottom: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         .project-meta {
             font-size: 0.9rem;
-            color: #ff00ff;
+            color: #ff0099;
             font-weight: 700;
             margin-bottom: 20px;
             text-transform: uppercase;
@@ -466,17 +287,16 @@
 
         .project-description-main {
             font-size: 1.05rem;
-            color: #e0d5ff;
+            color: #c9b5ff;
             line-height: 1.8;
             margin-bottom: 20px;
-            text-shadow: 0 0 5px rgba(255, 0, 255, 0.2);
         }
 
         .project-link-main {
             display: inline-block;
             font-size: 0.95rem;
             text-decoration: none;
-            color: #00ffff;
+            color: #8a2be2;
             font-weight: 700;
             position: relative;
             transition: all 0.3s ease;
@@ -484,15 +304,13 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             padding: 10px 20px;
-            border: 2px solid #00ffff;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+            border: 2px solid #8a2be2;
         }
 
         .project-link-main:hover {
-            color: #ff00ff;
-            border-color: #ff00ff;
-            box-shadow: 0 0 20px rgba(255, 0, 255, 0.8), inset 0 0 10px rgba(255, 0, 255, 0.3);
-            text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+            color: #ff0099;
+            border-color: #ff0099;
+            background: rgba(255, 0, 153, 0.1);
         }
 
         /* ===== SKILLS SECTION ===== */
@@ -504,20 +322,19 @@
 
         .skill-group {
             padding: 30px;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(255, 0, 255, 0.05) 100%);
-            border: 2px solid #00ffff;
-            border-bottom: 3px solid #ff00ff;
+            background: rgba(138, 43, 226, 0.08);
+            border: 2px solid #8a2be2;
+            border-bottom: 3px solid #ff0099;
         }
 
         .skill-group h3 {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.1rem;
-            color: #ff00ff;
+            color: #ff0099;
             margin-bottom: 15px;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-            text-shadow: 0 0 5px rgba(255, 0, 255, 0.5);
         }
 
         .skill-items {
@@ -529,9 +346,9 @@
         .skill-tag {
             display: inline-block;
             padding: 8px 14px;
-            background: rgba(0, 255, 255, 0.1);
-            border: 1px solid #00ffff;
-            color: #00ffff;
+            background: rgba(138, 43, 226, 0.15);
+            border: 1px solid #8a2be2;
+            color: #c9b5ff;
             font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -541,10 +358,9 @@
         }
 
         .skill-tag:hover {
-            background: rgba(255, 0, 255, 0.2);
-            border-color: #ff00ff;
-            color: #ff00ff;
-            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+            background: rgba(255, 0, 153, 0.15);
+            border-color: #ff0099;
+            color: #ff0099;
         }
 
         /* ===== CTA SECTION ===== */
@@ -552,28 +368,26 @@
             text-align: center;
             padding: 60px 40px;
             margin-top: 80px;
-            border-top: 3px solid #ff00ff;
-            border-bottom: 3px solid #00ffff;
-            background: linear-gradient(180deg, rgba(255, 0, 255, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
+            border-top: 3px solid #ff0099;
+            border-bottom: 3px solid #8a2be2;
+            background: rgba(138, 43, 226, 0.08);
         }
 
         .cta-title {
             font-family: 'Orbitron', sans-serif;
             font-size: 2rem;
-            color: #00ffff;
+            color: #ff0099;
             margin-bottom: 20px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
         }
 
         .cta-text {
             font-size: 1.05rem;
-            color: #e0d5ff;
+            color: #c9b5ff;
             margin-bottom: 30px;
             line-height: 1.7;
-            text-shadow: 0 0 5px rgba(255, 0, 255, 0.2);
         }
 
         .cta-links {
@@ -586,7 +400,7 @@
         .cta-link {
             font-size: 1rem;
             text-decoration: none;
-            color: #ff00ff;
+            color: #ff0099;
             font-weight: 700;
             position: relative;
             transition: all 0.3s ease;
@@ -594,24 +408,22 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             padding: 10px 20px;
-            border: 2px solid #ff00ff;
-            box-shadow: 0 0 10px rgba(255, 0, 255, 0.4);
+            border: 2px solid #ff0099;
         }
 
         .cta-link:hover {
-            color: #00ffff;
-            border-color: #00ffff;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), inset 0 0 10px rgba(0, 255, 255, 0.3);
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+            color: #8a2be2;
+            border-color: #8a2be2;
+            background: rgba(138, 43, 226, 0.15);
         }
 
         /* ===== FOOTER ===== */
         footer {
             text-align: center;
             padding: 50px 40px;
-            color: #ff0099;
+            color: #ff6ec7;
             font-size: 0.9rem;
-            border-top: 2px dashed #00ffff;
+            border-top: 2px dashed #8a2be2;
             margin-top: 80px;
             font-family: 'Courier New', monospace;
             text-transform: uppercase;
@@ -673,26 +485,10 @@
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-container" id="loadingScreen">
-        <div class="loading-content">
-            <div class="loading-image">
-                <div class="loading-waves">
-                    <div class="wave"></div>
-                    <div class="wave"></div>
-                    <div class="wave"></div>
-                </div>
-            </div>
-            <div class="loading-text">INITIALIZING...</div>
-        </div>
-    </div>
-
     <div class="content">
         <!-- HERO SECTION -->
         <header>
-            <div class="hero-glitch">
-                <h1>PALAK JHA</h1>
-            </div>
+            <h1>PALAK JHA</h1>
             <p class="tagline">∿ PRODUCT ARCHITECT ∿</p>
             <p class="hero-description">
                 Digital ecosystem builder navigating the zero-to-one frontier. Merging product strategy with emerging technology to craft experiences that resonate in the digital age.
@@ -882,15 +678,5 @@
             <p>∿ PALAK JHA 2026 ∿ DIGITAL ARCHITECT ∿</p>
         </footer>
     </div>
-
-    <script>
-        // Loading screen animation
-        window.addEventListener('load', () => {
-            const loadingScreen = document.getElementById('loadingScreen');
-            setTimeout(() => {
-                loadingScreen.classList.add('loaded');
-            }, 2000);
-        });
-    </script>
 </body>
 </html>
