@@ -76,11 +76,37 @@
             z-index: 1;
         }
 
-        .tagline {
-            font-size: 0.95rem;
+        .contact-info {
+            font-size: 0.9rem;
             color: var(--dark-grey);
             position: relative;
             z-index: 1;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: var(--purple);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--pink);
+            transition: width 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--pink);
         }
 
         /* Navigation line animation */
@@ -141,49 +167,14 @@
             border-radius: 2px;
         }
 
-        /* About section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .about-text {
+        /* Professional Summary */
+        .summary-text {
             font-size: 1.05rem;
             color: #555;
             line-height: 1.8;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-        }
-
-        .accent-block {
-            width: 100%;
-            height: 300px;
-            background: var(--purple);
-            opacity: 0.08;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .accent-block::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200px;
-            height: 200px;
-            background: var(--deep-blue);
-            opacity: 0.15;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            background: rgba(155, 107, 168, 0.04);
+            padding: 30px;
+            border-left: 4px solid var(--purple);
         }
 
         /* Experience & Skills */
@@ -211,6 +202,8 @@
             justify-content: space-between;
             align-items: baseline;
             margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .exp-title {
@@ -219,23 +212,42 @@
             color: var(--deep-blue);
         }
 
+        .exp-org {
+            font-size: 0.95rem;
+            color: var(--pink);
+            font-weight: 500;
+        }
+
         .exp-date {
             font-size: 0.9rem;
             color: var(--purple);
             font-weight: 500;
-        }
-
-        .exp-company {
-            font-size: 1rem;
-            color: var(--dark-grey);
-            font-weight: 500;
-            margin-bottom: 10px;
+            text-align: right;
         }
 
         .exp-description {
             font-size: 0.95rem;
             color: #666;
             line-height: 1.7;
+            margin-top: 10px;
+        }
+
+        .exp-description ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .exp-description li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .exp-description li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--pink);
         }
 
         /* Skills */
@@ -260,22 +272,13 @@
 
         .skill-list {
             list-style: none;
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.7;
         }
 
         .skill-list li {
-            font-size: 0.95rem;
-            color: #666;
             margin-bottom: 8px;
-            padding-left: 15px;
-            position: relative;
-        }
-
-        .skill-list li::before {
-            content: '—';
-            position: absolute;
-            left: 0;
-            color: var(--pink);
-            font-weight: bold;
         }
 
         /* Projects */
@@ -306,6 +309,13 @@
             margin-bottom: 10px;
         }
 
+        .project-date {
+            font-size: 0.85rem;
+            color: var(--purple);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
         .project-description {
             font-size: 0.95rem;
             color: #666;
@@ -313,10 +323,22 @@
             margin-bottom: 15px;
         }
 
-        .project-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+        .project-description ul {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .project-description li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .project-description li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--pink);
         }
 
         .project-link {
@@ -326,6 +348,7 @@
             font-weight: 500;
             position: relative;
             transition: color 0.3s ease;
+            display: inline-block;
         }
 
         .project-link::after {
@@ -345,98 +368,6 @@
 
         .project-link:hover::after {
             width: 100%;
-        }
-
-        /* Contact section */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .contact-text {
-            font-size: 1.05rem;
-            color: #555;
-            line-height: 1.8;
-        }
-
-        .contact-text p {
-            margin-bottom: 20px;
-        }
-
-        .contact-links {
-            list-style: none;
-            margin-top: 30px;
-        }
-
-        .contact-links li {
-            margin-bottom: 15px;
-        }
-
-        .contact-links a {
-            font-size: 1rem;
-            text-decoration: none;
-            color: var(--deep-blue);
-            font-weight: 500;
-            position: relative;
-            display: inline-block;
-            transition: color 0.3s ease;
-        }
-
-        .contact-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--pink);
-            transition: width 0.3s ease;
-        }
-
-        .contact-links a:hover {
-            color: var(--pink);
-        }
-
-        .contact-links a:hover::after {
-            width: 100%;
-        }
-
-        .contact-accent {
-            width: 100%;
-            height: 250px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-shape-1 {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background: var(--deep-blue);
-            opacity: 0.1;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            top: 20px;
-            right: 40px;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .contact-shape-2 {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: var(--purple);
-            opacity: 0.15;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            bottom: 40px;
-            left: 40px;
-            animation: float 8s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(20px); }
         }
 
         /* Footer */
@@ -466,6 +397,11 @@
                 font-size: 1.1rem;
             }
 
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
             main {
                 padding: 0 20px;
             }
@@ -477,12 +413,6 @@
             h2 {
                 font-size: 1.6rem;
                 padding-left: 20px;
-            }
-
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
             }
 
             .skills-grid {
@@ -498,6 +428,15 @@
                 width: 70px;
                 height: 70px;
             }
+
+            .exp-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .exp-date {
+                text-align: left;
+            }
         }
     </style>
 </head>
@@ -507,21 +446,37 @@
         <div class="header-accent"></div>
         <div class="header-accent-2"></div>
         <h1>Palak Jha</h1>
-        <p class="subtitle">Full Stack Developer & Designer</p>
-        <p class="tagline">Creating digital experiences with clean code and thoughtful design</p>
+        <p class="subtitle">Product & UX Leader | Startup Ecosystem Builder</p>
+        <div class="contact-info">
+            <a href="mailto:palakjha916@gmail.com">palakjha916@gmail.com</a>
+            <span>she/her</span>
+            <a href="https://github.com/onepizzateam" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/palakjha916" target="_blank">LinkedIn</a>
+            <a href="tel:+919845152421">+91 (984) 515-2421</a>
+        </div>
         <div class="nav-line"></div>
     </header>
 
     <main>
-        <!-- About Section -->
-        <section id="about">
-            <h2>About</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a passionate full stack developer with a keen eye for design. I craft digital solutions that blend functionality with elegant user experiences. My approach combines technical expertise with a deep understanding of user needs.</p>
-                    <p>With experience across web development, design systems, and product strategy, I bring a holistic perspective to every project. I believe in building things that matter—solutions that are both beautiful and purposeful.</p>
+        <!-- Professional Summary Section -->
+        <section id="summary">
+            <h2>Professional Summary</h2>
+            <div class="summary-text">
+                Sophomore at BITS Pilani who has led product research and MVP development in healthtech, closed INR 90L+ in sponsorship revenue, and shipped open source contributions to distributed systems. Spent the last year helping startups in their zero-to-one journey.
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Birla Institute of Technology & Science (BITS Pilani)</div>
+                        <div class="exp-org">BE in Manufacturing Engineering</div>
+                    </div>
+                    <div class="exp-date">Expected Jul 2028</div>
                 </div>
-                <div class="accent-block"></div>
             </div>
         </section>
 
@@ -532,82 +487,50 @@
             <div class="experience-item">
                 <div class="exp-header">
                     <div>
-                        <div class="exp-title">Senior Developer</div>
-                        <div class="exp-company">Tech Company</div>
+                        <div class="exp-title">Product & UX Lead</div>
+                        <div class="exp-org">Saathi AI (CEL Venture Studio, BITS Pilani)</div>
                     </div>
-                    <div class="exp-date">2024 - Present</div>
+                    <div class="exp-date">June 2025 – Aug 2025</div>
                 </div>
-                <p class="exp-description">Leading frontend development initiatives, mentoring junior developers, and establishing best practices for scalable architecture. Focus on performance optimization and user experience.</p>
+                <div class="exp-description">
+                    <ul>
+                        <li>Directed a 5-member team over 2 months to roadmap and produce a comprehensive product research and MVP strategy document for an elder-first mobile health assistant. Defined the product thesis for a WhatsApp-native elder care experience, intentionally choosing WhatsApp over a standalone app to eliminate tech-literacy barriers for elderly users</li>
+                        <li>Conducted 30+ discovery interviews across 3 segments and 10+ hospitals; findings directly shaped B2B distribution model and secured a soft pilot confirmation with Apollo Hospitals</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="experience-item">
                 <div class="exp-header">
                     <div>
-                        <div class="exp-title">Full Stack Developer</div>
-                        <div class="exp-company">Digital Agency</div>
+                        <div class="exp-title">Lead, Partnerships & Alliances</div>
+                        <div class="exp-org">Conquest, BITS Pilani – Asia's Largest Non-Dilutive Student-Run Startup Accelerator</div>
                     </div>
-                    <div class="exp-date">2022 - 2024</div>
+                    <div class="exp-date">Jan 2025 – Present</div>
                 </div>
-                <p class="exp-description">Developed and maintained full stack applications, collaborated with designers and stakeholders, and implemented responsive designs. Built RESTful APIs and worked with modern JavaScript frameworks.</p>
+                <div class="exp-description">
+                    <ul>
+                        <li>Structured and closed INR 90L+ in sponsorship revenue by designing value-aligned partnership theses and negotiating cross-functional deliverables across capital, distribution, and brand integrations with firms including Vodafone Idea, Google, WestBridge, and EarthOn Foundation</li>
+                        <li>Closed 15+ partnerships with AWS, Freshworks, Auth0, and others, providing various resources such as consultation calls across legal help, product design and strategy, and tooling access for cohort startups</li>
+                        <li>Guided a team of 3 to define Conquest's AI & SaaS thesis via VC reports and industry calls, sourcing 50+ startups; built the evaluation pipeline for 3,000+ applications and defined scoring criteria to select the top 23 ventures for Conquest's 2025 cohort with Gruhas, IAN, and Wadhwani Foundation</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="experience-item">
                 <div class="exp-header">
                     <div>
-                        <div class="exp-title">Junior Web Developer</div>
-                        <div class="exp-company">Startup</div>
+                        <div class="exp-title">Core Member</div>
+                        <div class="exp-org">Centre for Entrepreneurial Leadership (CEL), BITS Pilani</div>
                     </div>
-                    <div class="exp-date">2021 - 2022</div>
+                    <div class="exp-date">Jan 2025 – Present</div>
                 </div>
-                <p class="exp-description">Contributed to various projects involving HTML, CSS, and JavaScript. Gained hands-on experience with version control, agile methodologies, and collaborative development.</p>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <ul class="skill-list">
-                        <li>React / React Native</li>
-                        <li>Vue.js</li>
-                        <li>TypeScript</li>
-                        <li>Tailwind CSS</li>
-                        <li>Next.js</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <ul class="skill-list">
-                        <li>Node.js / Express</li>
-                        <li>Python</li>
-                        <li>PostgreSQL</li>
-                        <li>MongoDB</li>
-                        <li>RESTful APIs</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Design & Tools</h3>
-                    <ul class="skill-list">
-                        <li>Figma</li>
-                        <li>UI/UX Design</li>
-                        <li>Git & GitHub</li>
-                        <li>Docker</li>
-                        <li>AWS</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Other</h3>
-                    <ul class="skill-list">
-                        <li>Agile Methodologies</li>
-                        <li>Problem Solving</li>
-                        <li>Team Collaboration</li>
-                        <li>Technical Writing</li>
-                        <li>Mentoring</li>
+                <div class="exp-description">
+                    <ul>
+                        <li>Automated scouting pipeline for Summer in a Startup, reducing startup onboarding time from 30 minutes to 2-3 minutes of manual review per company and enabling scale from &lt;30 to 100+ startups</li>
+                        <li>Launched a startup career fair with 50+ companies; 200+ first/second-year students attended, 15+ pursued mentorship or internships</li>
+                        <li>Spearheaded Desert Hack 2026 which saw 500+ participants. Co-hosted workshops with Sarvam AI for mentorship and hands-on AI tooling sessions during the event</li>
+                        <li>Organized Bedrock, a flagship E-Week event with 2000+ participants where students solve real revenue and footfall problems for campus businesses, '26 edition saw over 500% increase in footfall and 200% increase in revenue across onboarded businesses on the day of the event</li>
                     </ul>
                 </div>
             </div>
@@ -618,50 +541,52 @@
             <h2>Projects</h2>
             
             <div class="project-item">
-                <div class="project-title">E-Commerce Platform</div>
-                <p class="project-description">Built a full-featured e-commerce platform with React, Node.js, and PostgreSQL. Implemented secure payment processing, inventory management, and real-time order tracking. Achieved 40% improvement in page load times through optimization.</p>
-                <div class="project-links">
-                    <a href="#live-demo">View Live</a>
-                    <a href="#github">GitHub Repository</a>
-                    <a href="#case-study">Case Study</a>
+                <div class="project-title">GreptimeDB (Open Source)</div>
+                <div class="project-date">Apr 2026</div>
+                <div class="project-description">
+                    <ul>
+                        <li>Proposed and merged PR into GreptimeDB (8.5k stars) adding gRPC-Web support using tonic-web, enabling browser/edge clients without proxy infrastructure</li>
+                    </ul>
                 </div>
-            </div>
-
-            <div class="project-item">
-                <div class="project-title">Design System</div>
-                <p class="project-description">Created a comprehensive design system with documented components, typography scales, and color systems. Reduced design-to-development time by 35% and ensured consistency across all products.</p>
-                <div class="project-links">
-                    <a href="#design-system">Explore Components</a>
-                    <a href="#documentation">Documentation</a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <div class="project-title">Mobile Analytics Dashboard</div>
-                <p class="project-description">Developed a real-time analytics dashboard for mobile applications using Vue.js and WebSockets. Implemented data visualization with interactive charts and customizable reports for stakeholders.</p>
-                <div class="project-links">
-                    <a href="#demo">Live Demo</a>
-                    <a href="#code">Source Code</a>
-                </div>
+                <a href="https://github.com/GreptimeTeam/greptimedb/issues/8016" target="_blank" class="project-link">View Issue</a>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <div class="contact-content">
-                <div class="contact-text">
-                    <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hello, feel free to reach out.</p>
-                    <ul class="contact-links">
-                        <li><a href="mailto:palak@example.com">palak@example.com</a></li>
-                        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-                        <li><a href="https://github.com" target="_blank">GitHub</a></li>
-                        <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Product & Strategy</h3>
+                    <ul class="skill-list">
+                        <li>Product Strategy</li>
+                        <li>User Research</li>
+                        <li>Stakeholder Management</li>
+                        <li>Process Automation</li>
+                        <li>Cross-Functional Collaboration</li>
                     </ul>
                 </div>
-                <div class="contact-accent">
-                    <div class="contact-shape-1"></div>
-                    <div class="contact-shape-2"></div>
+
+                <div class="skill-category">
+                    <h3>Technical</h3>
+                    <ul class="skill-list">
+                        <li>Next.js</li>
+                        <li>React</li>
+                        <li>Rust</li>
+                        <li>Supabase</li>
+                        <li>Vercel</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools & Infrastructure</h3>
+                    <ul class="skill-list">
+                        <li>AWS</li>
+                        <li>Figma</li>
+                        <li>Git & GitHub</li>
+                        <li>Design Systems</li>
+                        <li>Distributed Systems</li>
+                    </ul>
                 </div>
             </div>
         </section>
