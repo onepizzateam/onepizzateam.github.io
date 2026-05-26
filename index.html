@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palak Jha - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background-color: #f5f5f3;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Color palette */
+        :root {
+            --pink: #e85d8a;
+            --purple: #9b6ba8;
+            --deep-blue: #2d5a6b;
+            --light-grey: #f5f5f3;
+            --dark-grey: #666;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: relative;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header-accent {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: var(--pink);
+            top: 20px;
+            left: 40px;
+            opacity: 0.15;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .header-accent-2 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: var(--purple);
+            bottom: 30px;
+            right: 50px;
+            opacity: 0.12;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--purple);
+            font-weight: 300;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tagline {
+            font-size: 0.95rem;
+            color: var(--dark-grey);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation line animation */
+        .nav-line {
+            width: 60px;
+            height: 2px;
+            background: var(--pink);
+            margin: 30px auto;
+            animation: expand 2s ease-in-out infinite;
+        }
+
+        @keyframes expand {
+            0%, 100% { width: 60px; }
+            50% { width: 100px; }
+        }
+
+        /* Main content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        section {
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--pink), transparent);
+            opacity: 0.5;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--deep-blue);
+            margin-bottom: 40px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: var(--pink);
+            border-radius: 2px;
+        }
+
+        /* About section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .accent-block {
+            width: 100%;
+            height: 300px;
+            background: var(--purple);
+            opacity: 0.08;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .accent-block::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: var(--deep-blue);
+            opacity: 0.15;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Experience & Skills */
+        .experience-item {
+            margin-bottom: 50px;
+            padding-left: 30px;
+            border-left: 3px solid var(--pink);
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 3px solid var(--pink);
+            border-radius: 50%;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .exp-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--deep-blue);
+        }
+
+        .exp-date {
+            font-size: 0.9rem;
+            color: var(--purple);
+            font-weight: 500;
+        }
+
+        .exp-company {
+            font-size: 1rem;
+            color: var(--dark-grey);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .exp-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            padding: 30px;
+            background: rgba(155, 107, 168, 0.06);
+            border-left: 4px solid var(--purple);
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            color: var(--deep-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--pink);
+            font-weight: bold;
+        }
+
+        /* Projects */
+        .project-item {
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(232, 93, 138, 0.04) 0%, rgba(45, 90, 107, 0.04) 100%);
+            margin-bottom: 30px;
+            border-top: 3px solid var(--deep-blue);
+            position: relative;
+        }
+
+        .project-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: var(--pink);
+            opacity: 0.05;
+            clip-path: polygon(100% 0, 0 100%, 100% 100%);
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--deep-blue);
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: var(--purple);
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .project-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--pink);
+            transition: width 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--pink);
+        }
+
+        .project-link:hover::after {
+            width: 100%;
+        }
+
+        /* Contact section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-text {
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .contact-text p {
+            margin-bottom: 20px;
+        }
+
+        .contact-links {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .contact-links li {
+            margin-bottom: 15px;
+        }
+
+        .contact-links a {
+            font-size: 1rem;
+            text-decoration: none;
+            color: var(--deep-blue);
+            font-weight: 500;
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .contact-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--pink);
+            transition: width 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            color: var(--pink);
+        }
+
+        .contact-links a:hover::after {
+            width: 100%;
+        }
+
+        .contact-accent {
+            width: 100%;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-shape-1 {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: var(--deep-blue);
+            opacity: 0.1;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            top: 20px;
+            right: 40px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .contact-shape-2 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: var(--purple);
+            opacity: 0.15;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            bottom: 40px;
+            left: 40px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 40px;
+            color: var(--dark-grey);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(232, 93, 138, 0.2);
+            margin-top: 80px;
+        }
+
+        .footer-accent {
+            width: 40px;
+            height: 3px;
+            background: var(--pink);
+            margin: 20px auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            main {
+                padding: 0 20px;
+            }
+
+            section::before {
+                left: -20px;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+                padding-left: 20px;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-accent {
+                width: 80px;
+                height: 80px;
+            }
+
+            .header-accent-2 {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-accent"></div>
+        <div class="header-accent-2"></div>
+        <h1>Palak Jha</h1>
+        <p class="subtitle">Full Stack Developer & Designer</p>
+        <p class="tagline">Creating digital experiences with clean code and thoughtful design</p>
+        <div class="nav-line"></div>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate full stack developer with a keen eye for design. I craft digital solutions that blend functionality with elegant user experiences. My approach combines technical expertise with a deep understanding of user needs.</p>
+                    <p>With experience across web development, design systems, and product strategy, I bring a holistic perspective to every project. I believe in building things that matter—solutions that are both beautiful and purposeful.</p>
+                </div>
+                <div class="accent-block"></div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Experience</h2>
+            
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Senior Developer</div>
+                        <div class="exp-company">Tech Company</div>
+                    </div>
+                    <div class="exp-date">2024 - Present</div>
+                </div>
+                <p class="exp-description">Leading frontend development initiatives, mentoring junior developers, and establishing best practices for scalable architecture. Focus on performance optimization and user experience.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Full Stack Developer</div>
+                        <div class="exp-company">Digital Agency</div>
+                    </div>
+                    <div class="exp-date">2022 - 2024</div>
+                </div>
+                <p class="exp-description">Developed and maintained full stack applications, collaborated with designers and stakeholders, and implemented responsive designs. Built RESTful APIs and worked with modern JavaScript frameworks.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Junior Web Developer</div>
+                        <div class="exp-company">Startup</div>
+                    </div>
+                    <div class="exp-date">2021 - 2022</div>
+                </div>
+                <p class="exp-description">Contributed to various projects involving HTML, CSS, and JavaScript. Gained hands-on experience with version control, agile methodologies, and collaborative development.</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <ul class="skill-list">
+                        <li>React / React Native</li>
+                        <li>Vue.js</li>
+                        <li>TypeScript</li>
+                        <li>Tailwind CSS</li>
+                        <li>Next.js</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <ul class="skill-list">
+                        <li>Node.js / Express</li>
+                        <li>Python</li>
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                        <li>RESTful APIs</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Design & Tools</h3>
+                    <ul class="skill-list">
+                        <li>Figma</li>
+                        <li>UI/UX Design</li>
+                        <li>Git & GitHub</li>
+                        <li>Docker</li>
+                        <li>AWS</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Other</h3>
+                    <ul class="skill-list">
+                        <li>Agile Methodologies</li>
+                        <li>Problem Solving</li>
+                        <li>Team Collaboration</li>
+                        <li>Technical Writing</li>
+                        <li>Mentoring</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            
+            <div class="project-item">
+                <div class="project-title">E-Commerce Platform</div>
+                <p class="project-description">Built a full-featured e-commerce platform with React, Node.js, and PostgreSQL. Implemented secure payment processing, inventory management, and real-time order tracking. Achieved 40% improvement in page load times through optimization.</p>
+                <div class="project-links">
+                    <a href="#live-demo">View Live</a>
+                    <a href="#github">GitHub Repository</a>
+                    <a href="#case-study">Case Study</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Design System</div>
+                <p class="project-description">Created a comprehensive design system with documented components, typography scales, and color systems. Reduced design-to-development time by 35% and ensured consistency across all products.</p>
+                <div class="project-links">
+                    <a href="#design-system">Explore Components</a>
+                    <a href="#documentation">Documentation</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Mobile Analytics Dashboard</div>
+                <p class="project-description">Developed a real-time analytics dashboard for mobile applications using Vue.js and WebSockets. Implemented data visualization with interactive charts and customizable reports for stakeholders.</p>
+                <div class="project-links">
+                    <a href="#demo">Live Demo</a>
+                    <a href="#code">Source Code</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hello, feel free to reach out.</p>
+                    <ul class="contact-links">
+                        <li><a href="mailto:palak@example.com">palak@example.com</a></li>
+                        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                        <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="contact-accent">
+                    <div class="contact-shape-1"></div>
+                    <div class="contact-shape-2"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-accent"></div>
+        <p>&copy; 2026 Palak Jha. All rights reserved.</p>
+    </footer>
+</body>
+</html>
