@@ -2,79 +2,79 @@
 layout: index.jade
 ---
 
-<h1>Palak Jha<small>building products, ai systems, and startup infrastructure</small></h1>
+<h1>Palak Jha<small>Product, AI & Startups</small></h1>
 
 ### About Me
 
-I'm a rising junior at BITS Pilani working at the intersection of product, AI, and entrepreneurship.
+I'm a rising junior at BITS Pilani working at the intersection of _product_, _AI_, and _entrepreneurship_.
 
-Over the past year I've shipped machine learning systems in production, led product from 0→1 in healthtech, closed INR 90L+ in sponsorship revenue, and contributed to open source software.
+Currently a _Product & AI Intern at Volvo Group_, where I'm building internal analytics and machine intelligence platforms. Previously led partnerships at _Conquest_, BITS Pilani's startup accelerator, where I closed _INR 90L+_ in sponsorship revenue and helped evaluate _3,000+ startup applications_.
 
-My interests include enterprise AI, developer tools, product strategy, and the systems that help companies scale.
+I've also led product development from 0→1 in healthtech through _Saathi AI_, contributed to open-source software, and spend an unhealthy amount of time thinking about developer tools, enterprise software, and startup ecosystems.
 
 Located between Bengaluru and Pilani 🇮🇳.
 
+Currently studying a _Bachelor's Degree in Computer Science_ at _BITS Pilani_.
+
 ---
 
-### Experience
+### What I'm good at
 
-* Volvo Group
+- Product
+  - Product strategy
+  - User research
+  - Requirements gathering
+  - Product analytics
 
-  * Product & AI Intern
-  * Built and shipped a machine lifecycle intelligence platform tracking 27,938+ sales lifecycle events
-  * Reduced data retrieval time from a full working day to under 5 seconds
-  * Developed ML-based forecasting, stall-risk scoring, and imputation systems covering 4,773 pending machines
-  * Built an internal benchmarking platform reducing performance review time from 3–4 hours to 30 minutes
+- AI & Data
+  - Machine Learning
+  - Forecasting
+  - NLP
+  - Agentic AI
+  - Data Analytics
 
-* Conquest, BITS Pilani
+- Software Engineering
+  - Python
+  - C++
+  - TypeScript
+  - Rust
 
-  * Lead, Partnerships & Alliances
-  * Closed INR 90L+ in sponsorship revenue
-  * Structured 15+ ecosystem partnerships
-  * Delivered $300k+ in AWS credits and $150k+ in Chargebee benefits for startups
-  * Built evaluation workflows for 3,000+ startup applications and selected the final 23 ventures
+- Cloud & Infrastructure
+  - AWS
+  - Docker
+  - Linux
+  - CI/CD
 
-* Saathi AI
-
-  * Founding Product Lead
-  * Led product development from idea to MVP
-  * Conducted 30+ discovery interviews across 10+ hospitals
-  * Helped secure a soft pilot confirmation with Apollo Hospitals
-
-* Centre for Entrepreneurial Leadership (CEL)
-
-  * Core Member
-  * Scaled startup onboarding from under 30 companies to 100+
-  * Organized Desert Hack 2026 with 500+ participants
-  * Organized Bedrock 2026 with 2,000+ participants
+- Startups
+  - Partnerships
+  - Sponsorships
+  - Founder outreach
+  - Ecosystem building
 
 ---
 
 ### Selected Work
 
-1. GreptimeDB
+- Volvo Group
+  - Built machine lifecycle intelligence systems covering 27,938+ lifecycle events
+  - Reduced retrieval times from one day to under five seconds
+  - Developed forecasting and stall-risk prediction systems
 
-   * Proposed and merged a feature adding gRPC-Web support for browser and edge clients
-   * Contributed to an open-source database project with 8.5k+ GitHub stars
+- Conquest
+  - Closed INR 90L+ in sponsorship revenue
+  - Structured partnerships and benefits for startup cohorts
 
-2. rust2cython
+- GreptimeDB
+  - Open-source contribution adding gRPC-Web support
 
-   * Built a CLI tool that generates Cython bindings directly from Rust source code
-   * Uses AST-level parsing to automate wrapper generation and build pipelines
-
----
-
-### Current Focus
-
-* Product & AI at Volvo Group
-* Open source systems
-* Developer tooling
-* Competitive programming
-* Enterprise software
+- rust2cython
+  - Rust → Cython binding generator using AST parsing
 
 ---
 
-### Contact
+### Contact Me
+
+You can reach me through any of the platforms below, or directly via email.
 
 1. [GitHub](https://github.com/onepizzateam)
 2. [LinkedIn](https://linkedin.com/in/palakjha916)
@@ -85,6 +85,6 @@ Located between Bengaluru and Pilani 🇮🇳.
 
 ### This Website
 
-Written in Markdown, built with Metalsmith, and hosted as a static website.
+This site is written in _Markdown_, built by _Metalsmith_, and hosted on _GitHub Pages_.
 
 <small>© Palak Jha, 2026</small>
