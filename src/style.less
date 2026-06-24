@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Newsreader:wght@400;500&display=swap');
+
+@color-header: #1e1e24;
+@color-text: #4f5560;
+
+@color-accent: #c026d3;
+@color-accent-light: #a855f7;
+
+@color-detail: #ece7f4;
+
+@color-white: #fffbfd;
+
+/* dark mode */
+
+@dark-bg: #111018;
+@dark-header: #f4f1fa;
+@dark-text: #c8c2d4;
+@dark-detail: #2a2635;
+
+* {
+  font-family: 'Newsreader', serif;
+  font-weight: normal;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  background: @color-white;
+  color: @color-text;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+/* DARK MODE */
+
+html.dark,
+html.dark body {
+  background: @dark-bg;
+}
+
+html.dark * {
+  color: @dark-text;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5 {
+  color: @dark-header;
+}
+
+html.dark hr {
+  background: @dark-detail;
+}
+
+article {
+  margin: 72px auto 128px auto;
+  width: 600px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: @color-header;
+  }
+
+  h1 {
+    font-family: 'Staatliches', sans-serif;
+
+    font-size: 4.8em;
+
+    text-align: center;
+
+    letter-spacing: 0.03em;
+
+    margin-bottom: 12px;
+
+    /* KILL THE SHADOW */
+    text-shadow: none;
+
+    small {
+      display: block;
+
+      margin-top: 12px;
+
+      font-family: 'Newsreader', serif;
+
+      font-size: 0.22em;
+
+      letter-spacing: normal;
+
+      color: @color-text;
+    }
+  }
+
+  h2 {
+    margin-top: 48px;
+
+    font-size: 1.4em;
+  }
+
+  em,
+  a {
+    color: @color-accent;
+  }
+
+  a:hover {
+    color: @color-accent-light;
+  }
+
+  hr {
+    margin: 42px auto;
+
+    width: 60%;
+
+    height: 2px;
+
+    border: none;
+
+    border-radius: 2px;
+
+    background: @color-detail;
+  }
+
+  > ul {
+    padding: 0;
+    list-style-type: none;
+
+    > li {
+      color: @color-accent;
+    }
+
+    ul {
+      margin: 0 0 16px 0;
+
+      list-style-type: circle;
+
+      color: @color-text;
+    }
+  }
+
+  > ol {
+    list-style-type: circle;
+  }
+}
+
+/* DARK MODE TOGGLE */
+
+.theme-toggle {
+  position: fixed;
+
+  top: 24px;
+  right: 24px;
+
+  cursor: pointer;
+
+  border: none;
+
+  background: transparent;
+
+  color: @color-accent;
+
+  font-size: 14px;
+
+  z-index: 100;
+}
+
+html.dark .theme-toggle {
+  color: @color-accent-light;
+}
+
+@media only screen and (max-width: 712px) {
+  article {
+    margin-bottom: 48px;
+
+    padding: 0 32px;
+
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+  article h1 {
+    font-size: 3.5em;
+  }
+}
