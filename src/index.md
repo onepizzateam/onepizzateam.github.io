@@ -1,6 +1,6 @@
 ---
-
-## layout: index.jade
+layout: index.jade
+---
 
 <h1>Palak Jha<small>building products, ai systems, and startup infrastructure</small></h1>
 
