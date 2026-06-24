@@ -2,19 +2,17 @@
 
 ## layout: index.jade
 
-<h1>Palak Jha<small>Product & AI Intern @ Volvo Group</small></h1>
+<h1>Palak Jha<small>building products, ai systems, and startup infrastructure</small></h1>
 
 ### About Me
 
-I'm a student at BITS Pilani working at the intersection of product, AI, and business.
+I'm a rising junior at BITS Pilani working at the intersection of product, AI, and entrepreneurship.
 
-Over the past two years I've worked across enterprise AI systems, startup acceleration, venture building, and open source software. I currently work as a Product & AI Intern at Volvo Group, building internal AI systems and data products for business and operational stakeholders.
+Over the past year I've shipped machine learning systems in production, led product from 0→1 in healthtech, closed INR 90L+ in sponsorship revenue, and contributed to open source software.
 
-Outside of work, I spend most of my time building things, contributing to open source, participating in hackathons, and trying to become a better engineer.
+My interests include enterprise AI, developer tools, product strategy, and the systems that help companies scale.
 
-Located between Bengaluru & Pilani 🇮🇳.
-
-Currently pursuing a Bachelor's Degree at BITS Pilani while working in product, AI, and startups.
+Located between Bengaluru and Pilani 🇮🇳.
 
 ---
 
@@ -23,74 +21,70 @@ Currently pursuing a Bachelor's Degree at BITS Pilani while working in product, 
 * Volvo Group
 
   * Product & AI Intern
-  * Built internal enterprise AI systems and analytics platforms
-  * Worked with business and operations stakeholders to define requirements
-  * Developed machine lifecycle analytics and risk scoring systems
+  * Built and shipped a machine lifecycle intelligence platform tracking 27,938+ sales lifecycle events
+  * Reduced data retrieval time from a full working day to under 5 seconds
+  * Developed ML-based forecasting, stall-risk scoring, and imputation systems covering 4,773 pending machines
+  * Built an internal benchmarking platform reducing performance review time from 3–4 hours to 30 minutes
 
 * Conquest, BITS Pilani
 
-  * Partnerships & Alliances Lead
-  * Closed ₹90L+ in sponsorship revenue
-  * Worked with founders, investors, operators and startup ecosystem partners
-  * Evaluated 3,000+ startup applications
+  * Lead, Partnerships & Alliances
+  * Closed INR 90L+ in sponsorship revenue
+  * Structured 15+ ecosystem partnerships
+  * Delivered $300k+ in AWS credits and $150k+ in Chargebee benefits for startups
+  * Built evaluation workflows for 3,000+ startup applications and selected the final 23 ventures
 
 * Saathi AI
 
   * Founding Product Lead
   * Led product development from idea to MVP
-  * Conducted customer discovery and healthcare stakeholder interviews
-  * Built alongside a student venture studio
+  * Conducted 30+ discovery interviews across 10+ hospitals
+  * Helped secure a soft pilot confirmation with Apollo Hospitals
 
-* CEL, BITS Pilani
+* Centre for Entrepreneurial Leadership (CEL)
 
   * Core Member
-  * Startup ecosystem initiatives
-  * Hackathons and venture building programs
+  * Scaled startup onboarding from under 30 companies to 100+
+  * Organized Desert Hack 2026 with 500+ participants
+  * Organized Bedrock 2026 with 2,000+ participants
 
 ---
 
 ### Selected Work
 
-1. rust2cython
+1. GreptimeDB
 
-   * Rust → Python interoperability through generated Cython bindings
-   * Generates FFI shims, setup files, headers and wrappers automatically
+   * Proposed and merged a feature adding gRPC-Web support for browser and edge clients
+   * Contributed to an open-source database project with 8.5k+ GitHub stars
 
-2. GreptimeDB
+2. rust2cython
 
-   * Open source contribution enabling gRPC-Web support
-
-3. NoDoxx
-
-   * Desktop privacy assistant for detecting accidental disclosure of sensitive information
-
-4. Scobot
-
-   * Supply chain forecasting and optimization platform
+   * Built a CLI tool that generates Cython bindings directly from Rust source code
+   * Uses AST-level parsing to automate wrapper generation and build pipelines
 
 ---
 
 ### Current Focus
 
-* Product & AI @ Volvo Group
-* Open source contributions
+* Product & AI at Volvo Group
+* Open source systems
+* Developer tooling
 * Competitive programming
-* AI infrastructure & developer tools
-* Building things that people actually use
+* Enterprise software
 
 ---
 
 ### Contact
 
 1. [GitHub](https://github.com/onepizzateam)
-2. [LinkedIn](https://www.linkedin.com/in/palakjha916)
-3. Email: [palakjha916@gmail.com](mailto:palakjha916@gmail.com)
-4. Resume
+2. [LinkedIn](https://linkedin.com/in/palakjha916)
+3. [Resume](/Resume.pdf)
+4. [palakjha916@gmail.com](mailto:palakjha916@gmail.com)
 
 ---
 
 ### This Website
 
-This site is written in Markdown, built using Metalsmith, and hosted as a static website.
+Written in Markdown, built with Metalsmith, and hosted as a static website.
 
 <small>© Palak Jha, 2026</small>
