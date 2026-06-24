@@ -9,9 +9,9 @@ const ignore = require('metalsmith-ignore');
 
 Metalsmith(__dirname)
   .metadata({
-    title: 'Palak Jha',
+    title: 'Tuomas Pöyry — Web Designer & Developer',
     description:
-      'Product, AI, startups, and open source.'
+      'A passionate Web Designer & Developer working in the industry since 2014.'
   })
   .source('./src')
   .destination('./build')
