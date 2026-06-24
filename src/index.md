@@ -18,52 +18,45 @@ Currently studying a Bachelor's Degree in Manufacturing Engineering at _BITS Pil
 
 ---
 
-### What I'm good at
+### What I've Done
 
-- HTML, CSS, SVG
-  - LESS, SASS, Styled Components, Tailwind
-  - Jade / Pug, Handlebars, EJS, mdx
-- Front End (JavaScript)
-  - ES6
-  - TypeScript
-  - React (inc. FC, Context & Hooks), Redux, Vue
-  - Babel, Webpack, Parcel, Gulp, Gatsby
-- Back End (Node)
-  - Express, Hapi, Koa
-  - Socket.io
-  - Passport, JWT
-  - Mongoose, pq, TypeORM, Knex
-- SQL
-  - MySQL
-  - Microsoft SQL
-  - PostgreSQL
-- NoSQL
-  - MongoDB, DocumentDB
-  - Azure Storage
-- Unity
-  - C#
-  - Cg
-- Cloud
-  - Azure
-  - AWS
-  - GCP
-- Figma
+- Product & AI
+  - Built and shipped machine intelligence, forecasting, and analytics systems at Volvo Group
+  - Developed ML models covering 27,000+ sales lifecycle events and 4,700+ pending machines
+  - Worked across product discovery, stakeholder management, and implementation
+
+- Startups
+  - Led Partnerships & Alliances at Conquest, BITS Pilani's startup accelerator
+  - Closed INR 90L+ in sponsorship revenue and structured 15+ ecosystem partnerships
+  - Helped evaluate 3,000+ startup applications and select the final cohort
+
+- Product Development
+  - Led product development from 0 to 1 through Saathi AI
+  - Conducted 30+ discovery interviews across hospitals and healthcare stakeholders
+  - Helped shape distribution strategy and secure an early pilot opportunity
+
+- Communities
+  - Organized startup, hackathon, and entrepreneurship initiatives through CEL
+  - Helped scale startup onboarding programs and community events reaching thousands of participants
+
+- Open Source
+  - Contributed to GreptimeDB by adding gRPC-Web support
+  - Built rust2cython, a tool for generating Cython bindings from Rust source code
 
 ---
 
 ### Contact me
 
-You can send me a message on any of the social platforms, or contact me directly by sending an email to _me(at)tuomas(dot)id_
+You can send me a message on any of the social platforms, or contact me directly by sending an email to _palakjha916(at)gmail(dot)com_
 
-1. [GitHub](https://github.com/Munkkeli)
-2. [LinkedIn](https://www.linkedin.com/in/munkkeli)
-3. [Diploi](https://diploi.com/)
-4. [Treehouse](https://teamtreehouse.com/munkkeli)
+1. [GitHub](https://github.com/onepizzateam)
+2. [LinkedIn](https://www.linkedin.com/in/palakjha916)
+3. [Twitter](x.com/onepizzateam)
 
 ---
 
 ### This website
 
-This site is written in _Markdown_, built by [Metalsmith](https://metalsmith.io/), and continuously integrated & served by [Netlify](https://www.netlify.com/). The source can be found on [GitHub](https://github.com/Munkkeli/tuomas.id).
+This site is written in _Markdown_, built by [Metalsmith](https://metalsmith.io/), and continuously integrated & served by [Netlify](https://www.netlify.com/).
 
-<small>© Tuomas Pöyry, 2021</small>
+<small>© Palak Jha, 2026</small>
