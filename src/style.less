@@ -2,18 +2,9 @@
 
 @color-header: #202225;
 @color-text: #4d5357;
-
-/* changed from coral -> pink/purple */
-@color-accent: #d946ef;
-
+@color-accent: #ec556f;
 @color-detail: #e9ebec;
 @color-white: #f8f9f9;
-
-/* dark mode */
-@dark-bg: #121018;
-@dark-header: #f4effc;
-@dark-text: #c8bfd7;
-@dark-detail: #2d2638;
 
 * {
   font-family: 'Crete Round', serif;
@@ -26,33 +17,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: @color-white;
-
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
-}
-
-/* DARK MODE */
-
-html.dark,
-html.dark body {
-  background-color: @dark-bg;
-}
-
-html.dark * {
-  color: @dark-text;
-}
-
-html.dark article h1,
-html.dark article h2,
-html.dark article h3,
-html.dark article h4,
-html.dark article h5 {
-  color: @dark-header;
-}
-
-html.dark article hr {
-  background-color: @dark-detail;
 }
 
 article {
@@ -112,28 +76,6 @@ article {
   > ol {
     list-style-type: circle;
   }
-}
-
-/* theme toggle */
-
-.theme-toggle {
-  position: fixed;
-  top: 18px;
-  right: 18px;
-
-  border: none;
-  background: transparent;
-
-  cursor: pointer;
-
-  color: @color-accent;
-  font-size: 0.9rem;
-
-  opacity: 0.8;
-}
-
-.theme-toggle:hover {
-  opacity: 1;
 }
 
 @media only screen and (max-width: 712px) {
