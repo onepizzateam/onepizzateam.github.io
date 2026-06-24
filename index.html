@@ -1,682 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palak Jha - Digital Architect</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+  <title>Palak Jha</title>
 
-        body {
-            font-family: 'Courier New', monospace;
-            background: linear-gradient(180deg, #1a0f3d 0%, #2d1b4e 30%, #0d1f3c 60%, #1a0f3d 100%);
-            background-attachment: fixed;
-            color: #e0d5ff;
-            line-height: 1.6;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        /* Animated background grid */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(0deg, transparent 24%, rgba(138, 43, 226, 0.08) 25%, rgba(138, 43, 226, 0.08) 26%, transparent 27%, transparent 74%, rgba(138, 43, 226, 0.08) 75%, rgba(138, 43, 226, 0.08) 76%, transparent 77%, transparent),
-                linear-gradient(90deg, transparent 24%, rgba(138, 43, 226, 0.08) 25%, rgba(138, 43, 226, 0.08) 26%, transparent 27%, transparent 74%, rgba(138, 43, 226, 0.08) 75%, rgba(138, 43, 226, 0.08) 76%, transparent 77%, transparent);
-            background-size: 50px 50px;
-            pointer-events: none;
-            z-index: 0;
-            animation: grid-drift 20s linear infinite;
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        @keyframes grid-drift {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(50px); }
-        }
-
-        /* Main content wrapper */
-        .content {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ===== HERO SECTION ===== */
-        header {
-            position: relative;
-            padding: 80px 40px;
-            text-align: center;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(180deg, rgba(255, 0, 153, 0.15) 0%, rgba(138, 43, 226, 0.1) 50%, transparent 100%);
-        }
-
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 5rem;
-            font-weight: 900;
-            color: #ff0099;
-            margin-bottom: 20px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
-
-        .tagline {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
-            color: #8a2be2;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-
-        .hero-description {
-            font-size: 1.05rem;
-            color: #c9b5ff;
-            max-width: 650px;
-            line-height: 1.8;
-            margin: 0 auto 50px;
-        }
-
-        .contact-badges {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 60px;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 20px;
-            background: rgba(138, 43, 226, 0.15);
-            border: 2px solid #8a2be2;
-            font-size: 0.9rem;
-            color: #c9b5ff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-family: 'Courier New', monospace;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .badge:hover {
-            border-color: #ff0099;
-            background: rgba(255, 0, 153, 0.15);
-            color: #ff0099;
-        }
-
-        /* ===== MAIN CONTENT ===== */
-        main {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        section {
-            margin-bottom: 120px;
-            position: relative;
-            background: rgba(138, 43, 226, 0.05);
-            padding: 60px;
-            border: 2px solid #8a2be2;
-        }
-
-        h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            color: #ff0099;
-            margin-bottom: 50px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        /* ===== IMPACT SECTION ===== */
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .impact-card {
-            padding: 40px;
-            background: rgba(255, 0, 153, 0.1);
-            border: 2px solid #ff0099;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .impact-number {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 900;
-            color: #ff0099;
-            margin-bottom: 15px;
-        }
-
-        .impact-label {
-            font-size: 0.95rem;
-            color: #c9b5ff;
-            line-height: 1.6;
-        }
-
-        /* ===== WORK SECTION ===== */
-        .work-item {
-            margin-bottom: 60px;
-            padding-bottom: 50px;
-            border-bottom: 2px dashed rgba(138, 43, 226, 0.3);
-        }
-
-        .work-item:last-child {
-            border-bottom: none;
-        }
-
-        .work-header {
-            display: grid;
-            grid-template-columns: 1fr 200px;
-            gap: 40px;
-            margin-bottom: 25px;
-        }
-
-        .work-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #8a2be2;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .work-role {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
-            color: #ff0099;
-            font-weight: 700;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .work-date {
-            font-size: 0.85rem;
-            color: #ff6ec7;
-            font-style: italic;
-        }
-
-        .work-duration {
-            text-align: right;
-            font-size: 0.8rem;
-            color: #8a2be2;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .work-description {
-            font-size: 1.05rem;
-            color: #c9b5ff;
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
-
-        .work-highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .highlight {
-            padding: 20px;
-            background: rgba(255, 0, 153, 0.08);
-            border-left: 4px solid #ff0099;
-            border-bottom: 2px solid #8a2be2;
-            font-size: 0.95rem;
-            color: #c9b5ff;
-            line-height: 1.7;
-        }
-
-        /* ===== PROJECTS SECTION ===== */
-        .project-showcase {
-            padding: 50px;
-            background: rgba(138, 43, 226, 0.08);
-            border: 3px solid #ff0099;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .project-title-main {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #8a2be2;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .project-meta {
-            font-size: 0.9rem;
-            color: #ff0099;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .project-description-main {
-            font-size: 1.05rem;
-            color: #c9b5ff;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .project-link-main {
-            display: inline-block;
-            font-size: 0.95rem;
-            text-decoration: none;
-            color: #8a2be2;
-            font-weight: 700;
-            position: relative;
-            transition: all 0.3s ease;
-            font-family: 'Courier New', monospace;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 10px 20px;
-            border: 2px solid #8a2be2;
-        }
-
-        .project-link-main:hover {
-            color: #ff0099;
-            border-color: #ff0099;
-            background: rgba(255, 0, 153, 0.1);
-        }
-
-        /* ===== SKILLS SECTION ===== */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .skill-group {
-            padding: 30px;
-            background: rgba(138, 43, 226, 0.08);
-            border: 2px solid #8a2be2;
-            border-bottom: 3px solid #ff0099;
-        }
-
-        .skill-group h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
-            color: #ff0099;
-            margin-bottom: 15px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .skill-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            display: inline-block;
-            padding: 8px 14px;
-            background: rgba(138, 43, 226, 0.15);
-            border: 1px solid #8a2be2;
-            color: #c9b5ff;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-family: 'Courier New', monospace;
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            background: rgba(255, 0, 153, 0.15);
-            border-color: #ff0099;
-            color: #ff0099;
-        }
-
-        /* ===== CTA SECTION ===== */
-        .cta-section {
-            text-align: center;
-            padding: 60px 40px;
-            margin-top: 80px;
-            border-top: 3px solid #ff0099;
-            border-bottom: 3px solid #8a2be2;
-            background: rgba(138, 43, 226, 0.08);
-        }
-
-        .cta-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            color: #ff0099;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .cta-text {
-            font-size: 1.05rem;
-            color: #c9b5ff;
-            margin-bottom: 30px;
-            line-height: 1.7;
-        }
-
-        .cta-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-        }
-
-        .cta-link {
-            font-size: 1rem;
-            text-decoration: none;
-            color: #ff0099;
-            font-weight: 700;
-            position: relative;
-            transition: all 0.3s ease;
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 10px 20px;
-            border: 2px solid #ff0099;
-        }
-
-        .cta-link:hover {
-            color: #8a2be2;
-            border-color: #8a2be2;
-            background: rgba(138, 43, 226, 0.15);
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            text-align: center;
-            padding: 50px 40px;
-            color: #ff6ec7;
-            font-size: 0.9rem;
-            border-top: 2px dashed #8a2be2;
-            margin-top: 80px;
-            font-family: 'Courier New', monospace;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
-            }
-
-            .tagline {
-                font-size: 1rem;
-            }
-
-            main {
-                padding: 0 20px;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            section {
-                padding: 30px;
-            }
-
-            .work-header {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .work-duration {
-                text-align: left;
-            }
-
-            .impact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .work-highlights {
-                grid-template-columns: 1fr;
-            }
-
-            .project-showcase {
-                padding: 30px;
-            }
-
-            .skills-container {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-    </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="content">
-        <!-- HERO SECTION -->
-        <header>
-            <h1>PALAK JHA</h1>
-            <p class="tagline">∿ PRODUCT ARCHITECT ∿</p>
-            <p class="hero-description">
-                Digital ecosystem builder navigating the zero-to-one frontier. Merging product strategy with emerging technology to craft experiences that resonate in the digital age.
-            </p>
-            
-            <div class="contact-badges">
-                <a href="mailto:palakjha916@gmail.com" class="badge">✉ EMAIL</a>
-                <a href="https://github.com/onepizzateam" target="_blank" class="badge">◉ GITHUB</a>
-                <a href="https://linkedin.com/in/palakjha916" target="_blank" class="badge">⊙ LINKEDIN</a>
-                <a href="tel:+919845152421" class="badge">☎ CALL</a>
-            </div>
-        </header>
 
-        <main>
-            <!-- IMPACT HIGHLIGHTS -->
-            <section>
-                <h2>≈ METRICS ≈</h2>
-                <div class="impact-grid">
-                    <div class="impact-card">
-                        <div class="impact-number">₹90L+</div>
-                        <div class="impact-label">Sponsorship revenue synthesized through strategic ecosystem alignment</div>
-                    </div>
-                    <div class="impact-card">
-                        <div class="impact-number">30+</div>
-                        <div class="impact-label">Discovery interviews across healthcare dimensions enabling distributed validation</div>
-                    </div>
-                    <div class="impact-card">
-                        <div class="impact-number">500%</div>
-                        <div class="impact-label">Event amplification through operational optimization and business synthesis</div>
-                    </div>
-                </div>
-            </section>
+<div class="container">
 
-            <!-- WORK SECTION -->
-            <section>
-                <h2>≈ WORKS ≈</h2>
+<header class="hero">
 
-                <!-- Saathi AI -->
-                <div class="work-item">
-                    <div class="work-header">
-                        <div>
-                            <div class="work-role">● PRODUCT & UX LEAD</div>
-                            <div class="work-title">SAATHI AI</div>
-                            <div class="work-date">CEL Venture Studio, BITS Pilani</div>
-                        </div>
-                        <div class="work-duration">JUNE 2025 → AUG 2025</div>
-                    </div>
-                    <p class="work-description">
-                        Architected product strategy for an elder-first mobile health system. Designed WhatsApp-native experience to eliminate tech-literacy barriers and validated B2B healthcare distribution model through hospital partnerships.
-                    </p>
-                    <div class="work-highlights">
-                        <div class="highlight">
-                            <strong>30+ interviews</strong> across elderly users, caregivers, healthcare dimensions
-                        </div>
-                        <div class="highlight">
-                            <strong>APOLLO HOSPITALS</strong> soft pilot confirmation based on distributed research
-                        </div>
-                        <div class="highlight">
-                            <strong>WHATSAPP-FIRST</strong> strategy maximizing accessibility and digital adoption
-                        </div>
-                    </div>
-                </div>
+  <img
+    src="assets/profile.jpg"
+    alt="Palak Jha"
+    class="profile"
+  >
 
-                <!-- Conquest -->
-                <div class="work-item">
-                    <div class="work-header">
-                        <div>
-                            <div class="work-role">● LEAD, PARTNERSHIPS & ALLIANCES</div>
-                            <div class="work-title">CONQUEST</div>
-                            <div class="work-date">Asia's Largest Non-Dilutive Startup Accelerator</div>
-                        </div>
-                        <div class="work-duration">JAN 2025 → PRESENT</div>
-                    </div>
-                    <p class="work-description">
-                        Synthesized partnership architecture to unlock distributed resources for 23 portfolio ventures. Engineered value-aligned collaboration frameworks with leading ecosystem actors and capital networks.
-                    </p>
-                    <div class="work-highlights">
-                        <div class="highlight">
-                            <strong>15+ partnerships</strong> with AWS, Freshworks, Auth0, Google, WestBridge
-                        </div>
-                        <div class="highlight">
-                            <strong>AI & SAAS THESIS</strong> built through distributed VC research and industry synthesis
-                        </div>
-                        <div class="highlight">
-                            <strong>3,000+ applications</strong> evaluated with algorithmic scoring for cohort optimization
-                        </div>
-                    </div>
-                </div>
+  <h1>Palak Jha</h1>
 
-                <!-- CEL -->
-                <div class="work-item">
-                    <div class="work-header">
-                        <div>
-                            <div class="work-role">● CORE MEMBER</div>
-                            <div class="work-title">CENTRE FOR ENTREPRENEURIAL LEADERSHIP</div>
-                            <div class="work-date">BITS Pilani</div>
-                        </div>
-                        <div class="work-duration">JAN 2025 → PRESENT</div>
-                    </div>
-                    <p class="work-description">
-                        Engineered systems connecting students with startup ecosystems. Focused on process automation, stakeholder engagement, and generating tangible outcomes for distributed digital communities.
-                    </p>
-                    <div class="work-highlights">
-                        <div class="highlight">
-                            <strong>PROCESS AUTOMATION</strong> reduced onboarding from 30 min to 2-3 min per startup
-                        </div>
-                        <div class="highlight">
-                            <strong>BEDROCK EVENT</strong> generated 500% footfall & 200% revenue across campus businesses
-                        </div>
-                        <div class="highlight">
-                            <strong>DESERT HACK 2026</strong> synthesized 500+ developers with Sarvam AI workshops
-                        </div>
-                    </div>
-                </div>
-            </section>
+  <p class="tagline">
+    product × ai × systems
+  </p>
 
-            <!-- PROJECTS SECTION -->
-            <section>
-                <h2>≈ OPEN SOURCE ≈</h2>
-                <div class="project-showcase">
-                    <div class="project-content">
-                        <div class="project-title-main">GREPTIMEDB</div>
-                        <div class="project-meta">● gRPC-WEB IMPLEMENTATION • APR 2026</div>
-                        <p class="project-description-main">
-                            Proposed and merged distributed systems enhancement enabling gRPC-Web support via tonic-web. Eliminated proxy infrastructure requirements for browser and edge clients, optimizing distributed communication patterns.
-                        </p>
-                        <a href="https://github.com/GreptimeTeam/greptimedb/issues/8016" target="_blank" class="project-link-main">
-                            → VIEW REPOSITORY
-                        </a>
-                    </div>
-                </div>
-            </section>
+  <p class="intro">
+    Building enterprise AI systems at Volvo Group,
+    helping startups scale through Conquest,
+    and shipping open-source tools.
+  </p>
 
-            <!-- SKILLS SECTION -->
-            <section>
-                <h2>≈ SKILLSET ≈</h2>
-                <div class="skills-container">
-                    <div class="skill-group">
-                        <h3>◉ PRODUCT LAYER</h3>
-                        <div class="skill-items">
-                            <span class="skill-tag">Product Strategy</span>
-                            <span class="skill-tag">User Research</span>
-                            <span class="skill-tag">Market Validation</span>
-                            <span class="skill-tag">B2B/B2C</span>
-                            <span class="skill-tag">Stakeholder Mgmt</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3>◉ TECHNICAL STACK</h3>
-                        <div class="skill-items">
-                            <span class="skill-tag">Next.js</span>
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Rust</span>
-                            <span class="skill-tag">Supabase</span>
-                            <span class="skill-tag">Distributed Sys</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3>◉ EXECUTION</h3>
-                        <div class="skill-items">
-                            <span class="skill-tag">Figma</span>
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">Automation</span>
-                            <span class="skill-tag">Event Strategy</span>
-                            <span class="skill-tag">System Design</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+  <button id="theme-toggle">
+    dark mode
+  </button>
 
-            <!-- CTA SECTION -->
-            <section class="cta-section">
-                <h3 class="cta-title">≈ TRANSMISSION READY ≈</h3>
-                <p class="cta-text">
-                    Ready to collaborate on digital architecture, ecosystem building, or next-generation product experiences. Let's synthesize something extraordinary.
-                </p>
-                <div class="cta-links">
-                    <a href="mailto:palakjha916@gmail.com" class="cta-link">→ EMAIL</a>
-                    <a href="https://linkedin.com/in/palakjha916" target="_blank" class="cta-link">→ LINKEDIN</a>
-                    <a href="https://github.com/onepizzateam" target="_blank" class="cta-link">→ GITHUB</a>
-                </div>
-            </section>
-        </main>
+</header>
 
-        <!-- FOOTER -->
-        <footer>
-            <p>∿ PALAK JHA 2026 ∿ DIGITAL ARCHITECT ∿</p>
-        </footer>
-    </div>
+<section>
+  <h2>about</h2>
+
+  <p>
+    I'm a student at BITS Pilani working at the
+    intersection of product, AI, and business.
+  </p>
+
+  <p>
+    Over the past year I've built machine learning
+    systems for enterprise users, led product from
+    0→1 in healthtech, closed ₹90L+ in partnerships,
+    and contributed to open-source infrastructure
+    projects.
+  </p>
+
+  <p>
+    My interests sit at the intersection of AI,
+    developer tools, enterprise software,
+    infrastructure, and strategy.
+  </p>
+</section>
+
+<section>
+  <h2>selected work</h2>
+
+  <article class="project">
+    <h3>rust2cython</h3>
+    <p>
+      Generate Cython bindings and build pipelines
+      directly from Rust source.
+    </p>
+  </article>
+
+  <article class="project">
+    <h3>Machine Lifecycle Intelligence Platform</h3>
+    <p>
+      Internal analytics, forecasting and risk
+      scoring platform built at Volvo Group.
+    </p>
+  </article>
+
+  <article class="project">
+    <h3>Saathi AI</h3>
+    <p>
+      WhatsApp-first health assistant for
+      post-operative patient care.
+    </p>
+  </article>
+
+  <article class="project">
+    <h3>GreptimeDB</h3>
+    <p>
+      Open-source contribution adding gRPC-Web
+      support for browser and edge clients.
+    </p>
+  </article>
+</section>
+
+<section>
+  <h2>experience</h2>
+
+  <div class="item">
+    <strong>Volvo Group</strong>
+    <span>Product & AI Intern</span>
+  </div>
+
+  <div class="item">
+    <strong>Conquest</strong>
+    <span>Partnerships & Alliances Lead</span>
+  </div>
+
+  <div class="item">
+    <strong>CEL Venture Studio</strong>
+    <span>Founding Product Lead</span>
+  </div>
+
+  <div class="item">
+    <strong>BITS Pilani</strong>
+    <span>Manufacturing Engineering</span>
+  </div>
+</section>
+
+<section>
+  <h2>currently</h2>
+
+  <ul>
+    <li>product & ai @ volvo group</li>
+    <li>building rust2cython</li>
+    <li>open source</li>
+    <li>competitive programming</li>
+    <li>exploring ai infrastructure</li>
+  </ul>
+</section>
+
+<footer>
+
+  <a href="https://github.com/onepizzateam">
+    GitHub
+  </a>
+
+  <a href="https://linkedin.com/in/palakjha916">
+    LinkedIn
+  </a>
+
+  <a href="mailto:palakjha916@gmail.com">
+    Email
+  </a>
+
+  <a href="resume.pdf">
+    Resume
+  </a>
+
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
